@@ -1,13 +1,13 @@
 import request from '../utils/request'
 export const login = data => {
-  request({
+  return request({
     method: 'POST',
     url: '/api/users/login',
     data
   })
 }
 export const register = data => {
-  request({
+  return request({
     method: 'POST',
     url: '/api/users',
     data
