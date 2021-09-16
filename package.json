@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "axios": "^0.21.4",
+    "cookieparser": "^0.1.0",
+    "js-cookie": "^3.0.1",
     "nuxt": "^2.15.8"
   }
 }

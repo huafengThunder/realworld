@@ -30,7 +30,7 @@
           <li class="nav-item">
             <nuxt-link class="nav-link" to="/profile/123">
               <img class="user-pic" src="http://toutiao.meiduo.site/FtNcS8sKFSYQbtBbd40eFTL6lAs_" />
-              lpz999
+              lpz999 
             </nuxt-link>
           </li>
         </ul>
@@ -55,7 +55,16 @@
   </div>
 </template>
 <script>
-export default { name: 'LayoutIndex' }
+import { mapState } from 'vuex'
+export default {
+  name: 'LayoutIndex',
+  computed: {
+    ...mapState(['user'])
+  },
+  created(){
+    console.log(this.user)
+  }
+}
 </script>
 <style>
 </style>
