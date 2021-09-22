@@ -63,7 +63,7 @@ export default {
         Cookie.set("user", data.user) 
         this.$router.push('/')
       } catch (err) {
-        console.log(err)
+        // console.log(err)
         this.errors = err.response.data.errors
       }
     }
