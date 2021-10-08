@@ -71,9 +71,5 @@
 <script>
 export default {
   name: 'Home',
-  mounted(){
-    // this.$store.user
-    console.log(this.$store.user)
-  }
 }
 </script>

@@ -20,6 +20,7 @@ export const actions = {
         user = JSON.parse(parsed.user)
       }
       catch (err) {
+        console.log(err)
         // No valid cookie found      
       }
     }

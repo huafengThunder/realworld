@@ -29,3 +29,9 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  middleware:'authenticated',
+  name:'EditorIndex'
+}
+</script>

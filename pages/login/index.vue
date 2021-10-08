@@ -41,6 +41,7 @@ import { login, register } from '../../api/user'
 //客户端，服务端都能拿到cookie
 const Cookie = process.client ? require('js-cookie') : undefined
 export default {
+  middleware:'notAuthenticated',
   name: 'LoginIndex',
   data () {
     return {
@@ -60,7 +61,7 @@ export default {
       try {
         const { data } = this.isLogin ? await login({ user: this.user }) : await register({ user: this.user })
         this.$store.commit('setUser', data.user) 
-        Cookie.set("user", data.user) 
+        Cookie.set("user",JSON.stringify(data.user)) 
         this.$router.push('/')
       } catch (err) {
         // console.log(err)
