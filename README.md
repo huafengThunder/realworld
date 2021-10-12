@@ -4,4 +4,4 @@
 - 接口文档：https://github.com/gothinkster/realworld/tree/master/api 
 - 页面模板：https://github.com/gothinkster/realworld-starter-kit/blob/master/FRONTEND_INS TRUCTIONS.md
 ### linux scp、git传文件到服务器
-- scp可视化软件
+- winscp可视化软件(指令容易出现乱码)
