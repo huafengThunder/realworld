@@ -48,7 +48,7 @@ module.exports={
   },
   server:{
     host:'0.0.0.0',//外网环境(监听所有网卡)。
-    port:30001
+    port:3001
   },
   //注册插件
   plugins:[
