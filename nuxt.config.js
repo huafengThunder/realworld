@@ -46,6 +46,10 @@ module.exports={
       }])
     }
   },
+  server:{
+    host:'0.0.0.0',//外网环境(监听所有网卡)。
+    port:30001
+  },
   //注册插件
   plugins:[
     '~/plugins/request.js',
