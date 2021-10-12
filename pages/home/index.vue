@@ -19,35 +19,39 @@
               </li>          
             </ul>        
           </div>
-          <div class="article-preview">      
-            <div class="article-meta">          
-              <a href="profile.html"><img src="https://static.productionready.io/images/smiley-cyrus.jpg" /></a>            
-              <div class="info"><a href="" class="author">Eric Simons</a><span class="date">January
-                  20th</span>
-              </div><button class="btn btn-outline-primary btn-sm pull-xs-right"><i
-                  class="ion-heart"></i> 29</button>          
-            </div>          
-            <a href="" class="preview-link">            
-              <h1> How to build webapps that scale</h1>            
-              <p>This is the description for the post.</p><span>Read more...</span>
-            </a>        
+          <div class="article-preview" v-for="article in articles" :key="article.slug">
+            <div class="article-meta">    
+              <nuxt-link class="author" :to="`/profile/${article.author.username}`">      
+                <img :src="article.author.image" />
+              </nuxt-link>    
+              <div class="info">      
+                <nuxt-link class="author" :to="`/profile/${article.author.username}`">      
+                  {{ article.author.username }}      
+                </nuxt-link>      
+                <span class="date">{{ article.createdAt }}</span>    
+              </div>    
+              <button class="btn btn-outline-primary btn-sm pull-xs-right"
+                :class="{ active: article.favorited }">
+                <i class="ion-heart"></i>{{ article.favoritesCount }}    
+              </button>  
+            </div>  
+            <nuxt-link :to="{ name:'article', params:{ slug:article.slug }}" class="preview-link">
+              <h1>{{ article.title }}</h1>    
+              <p>{{ article.description }}</p>    
+              <span @click="$router.push({ name:'article', params:{ slug: article.slug } })">Read
+                more...</span>  
+            </nuxt-link>
           </div>
-          <div class="article-preview">          
-            <div class="article-meta">            
-              <a href="profile.html"><img src="https://static.productionready.io/images/smiley-cyrus.jpg" /> </a>            
-              <div class="info">              
-                <a href="" class="author">Albert Pai</a>            
-                <span class="date">January 20th</span>
-              </div>
-              <button class="btn btn-outline-primary btn-sm pull-xs-right">
-                <i class="ion-heart"></i> 32 </button>          
-            </div>          
-            <a href="" class="preview-link">
-              <h1>The song you won't ever stop singing. No matter how hard you try.</h1>
-              <p>This is the description for the post.</p>      
-              <span>Read more...</span>          
-            </a>        
-          </div>
+          <div v-if="!articles.length" class="article-preview"> No articles are here... yet. </div>
+          <nav>  
+            <ul class="pagination">    
+              <li class="page-item" :class="{ active: item === page }" v-for="item in totalPage"
+                 :key="item">
+                <nuxt-link class="page-link" :to="{ name:'home', query:{ page: item } }">
+                  {{ item }}</nuxt-link>
+              </li>  
+            </ul>
+          </nav>
         </div>
         <div class="col-md-3">
           <div class="sidebar">
@@ -69,7 +73,24 @@
   </div>
 </template>
 <script>
+import { getArticles } from '../../api/article.js'
+import { getTags } from '../../api/tag'
 export default {
-  name: 'Home',
+  name: 'HomeIndex',
+  async asyncData ({ query }) {
+    const page = Number.parseInt(query.page || 1)
+    const limit = 20
+    const { data } = await getArticles({
+      limit, // 每页大小
+      offset: (page - 1) * limit
+    })
+    const { data: tagData } = await getTags()
+    console.log(tagData)
+    return { limit, page, articlesCount: data.articlesCount, articles: data.articles }
+  },
+  watchQuery: ['page'],//响应 query 参数的变化
+  computed: {
+    totalPage () { return Math.ceil(this.articlesCount / this.limit) }
+  }
 }
 </script>
