@@ -1,8 +1,10 @@
 name: GitHub Actions Demo
 on:  
   push:    
-    tags:      
-      - 'v*'
+    #tags:      
+      #- 'v*'
+    branches:
+      - master
 
 jobs:
   build-and-deploy:
