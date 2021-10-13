@@ -1,0 +1,51 @@
+[
+  {
+    "path": "/",
+    "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\03-03-study-materials\\\\handouts\\\\realworld\\\\pages\\\\layout",
+    "children": [
+      {
+        "path": "",
+        "name": "home",
+        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\03-03-study-materials\\\\handouts\\\\realworld\\\\pages\\\\home",
+        "_name": "_4b93dcfe"
+      },
+      {
+        "path": "/login",
+        "name": "login",
+        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\03-03-study-materials\\\\handouts\\\\realworld\\\\pages\\\\login",
+        "_name": "_6cc46707"
+      },
+      {
+        "path": "/register",
+        "name": "register",
+        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\03-03-study-materials\\\\handouts\\\\realworld\\\\pages\\\\login",
+        "_name": "_6cc46707"
+      },
+      {
+        "path": "/profile",
+        "name": "profile",
+        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\03-03-study-materials\\\\handouts\\\\realworld\\\\pages\\\\profile",
+        "_name": "_266d91c7"
+      },
+      {
+        "path": "/settings",
+        "name": "settings",
+        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\03-03-study-materials\\\\handouts\\\\realworld\\\\pages\\\\settings",
+        "_name": "_3884b7c5"
+      },
+      {
+        "path": "/editor",
+        "name": "editor",
+        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\03-03-study-materials\\\\handouts\\\\realworld\\\\pages\\\\editor",
+        "_name": "_1f3c9d8f"
+      },
+      {
+        "path": "/article",
+        "name": "article",
+        "component": "C:\\\\Users\\\\Administrator\\\\Desktop\\\\03-03-study-materials\\\\handouts\\\\realworld\\\\pages\\\\article",
+        "_name": "_0d37d514"
+      }
+    ],
+    "_name": "_2b0b774c"
+  }
+]
