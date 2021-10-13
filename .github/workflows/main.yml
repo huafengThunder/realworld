@@ -3,10 +3,12 @@ on:
   push:    
     tags:      
       - 'v*'
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest 
     steps:
+      
     # 下载源码 
     - name: Checkout      
       uses: actions/checkout@master
