@@ -1,10 +1,8 @@
-name: GitHub Actions Demo
+name: Publish And Deploy Demo
 on:  
   push:    
-    #tags:      
-      #- 'v*'
-    branches:
-      - master
+    tags:      
+      - 'V*'
 
 jobs:
   build-and-deploy:
@@ -55,7 +53,7 @@ jobs:
         password: ${{ secrets.PASSWORD }}        
         port: ${{ secrets.PORT }}        
         script: |          
-          cd /root/usr/local/realworld-nuxtjs          
+          cd /usr/local/realworld-nuxtjs          
           wget https://github.com/huafengThunder/realworld/releases/latest/download/release.tgz -O release.tgz          
           tar zxvf release.tgz          
           npm install --production          
