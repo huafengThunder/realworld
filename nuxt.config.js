@@ -1,5 +1,6 @@
 module.exports={
   router:{
+    linkExactActiveClass: 'active',
     extendRoutes (routes, resolve) {
       // console.log(routes)
       routes.splice(0) //清除默认的路由
